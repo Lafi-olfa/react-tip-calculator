@@ -1,38 +1,43 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,700&display=swap');
 
-:root{
---green400: hsl(172, 67%, 45%);
---green900: hsl(183, 100%, 15%);
---grey500: hsl(186, 14%, 43%);
---grey400: hsl(184, 14%, 56%);
---grey200: hsl(185, 41%, 84%);
---grey50: hsl(189, 47%, 97%);
---white: hsl(0, 100%, 100%);
---fs-input:24px;
+:root {
+  --green400: hsl(172, 67%, 45%);
+  --green900: hsl(183, 100%, 15%);
+  --grey500: hsl(186, 14%, 43%);
+  --grey400: hsl(184, 14%, 56%);
+  --grey200: hsl(185, 41%, 84%);
+  --grey50: hsl(189, 47%, 97%);
+  --white: hsl(0, 100%, 100%);
+  --fs-input: 24px;
 }
+
 #root {
-max-width: 1280px;
-margin: 0 auto;
-padding: 2rem;
-/* text-align: center; */
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  /* text-align: center; */
 }
-*{
-box-sizing: border-box;
-padding: 0;
-margin: 0;
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
-body{
+
+body {
   background-color: var(--grey200);
   font-family: 'Space Mono';
   font-style: normal;
 }
-.app{
-display: grid;
-place-items: center;
-gap: 1rem;
+
+.app {
+  display: grid;
+  place-items: center;
+  gap: 1rem;
 }
-.calculator-container{
-  border: 1px solid  var(--white);
+
+.calculator-container {
+  border: 1px solid var(--white);
   border-radius: 1rem;
   background-color: var(--white);
   margin: 3rem 0;
@@ -41,36 +46,45 @@ gap: 1rem;
   flex-direction: column;
   gap: 2rem;
 }
-.bill-input-container{
+
+.bill-input-container,
+.people-input-container,
+.bill-tip-container {
   padding: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
 }
-.input-label{
-  color: var(--grey400);  
+
+.input-label {
+  color: var(--grey400);
 }
-.bill-input-icon{
-  /* background-color: red; */
+
+.bill-input-icon,
+.people-input-icon,
+.btn-toolbar {
   width: 100%;
   padding: 0.5rem 0 0.5rem 0;
   position: relative;
 }
-.amount-input{
+
+.amount-input,
+.number-people-input {
   width: 100%;
   height: 2.5rem;
   padding: 0.3rem;
   background-color: var(--grey200);
   border: none;
   border-radius: 0.2rem;
-  color:var(--green900);
+  color: var(--green900);
   font-weight: 700;
   font-family: 'Space Mono';
   font-size: var(--fs-input);
   text-align: end;
 }
-.bill-logo{
+
+.bill-logo {
   height: 1.2rem;
   width: 1rem;
   position: absolute;
@@ -78,5 +92,46 @@ gap: 1rem;
   top: calc(2.5rem / 2);
 }
 
+/* tip  */
+.btn-toolbar {
+  /* margin-top: 0.5rem; */
+  /* background-color: red; */
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto;
+  gap: 0.5rem;
+}
 
+.btn-group {
+  /* background-color: aqua; */
+  height: 100%;
+  width: 100%;
+  /* padding: 0.5rem; */
+  /* border: 1px solid red; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  border-radius: 1rem;
 
+}
+
+.btn-secondary {
+  background-color: var(--green900);
+  color: var(--white);
+  width: calc(100% /2);
+  font-size: var(--fs-input);
+  padding: 0.5rem 0;
+}
+
+.custom {
+  background-color: var(--grey50);
+  color: var(--grey400);
+  border: none;
+
+}
+
+.btn-secondary:active {
+  background-color: var(--green400);
+  color: var(--grey200);
+}
