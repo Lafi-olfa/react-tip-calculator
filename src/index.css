@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,700&display=swap');
+
+:root{
+--green400: hsl(172, 67%, 45%);
+--green900: hsl(183, 100%, 15%);
+--grey500: hsl(186, 14%, 43%);
+--grey400: hsl(184, 14%, 56%);
+--grey200: hsl(185, 41%, 84%);
+--grey50: hsl(189, 47%, 97%);
+--white: hsl(0, 100%, 100%);
+--fs-input:24px;
+}
+#root {
+max-width: 1280px;
+margin: 0 auto;
+padding: 2rem;
+/* text-align: center; */
+}
+*{
+box-sizing: border-box;
+padding: 0;
+margin: 0;
+}
+body{
+  background-color: var(--grey200);
+  font-family: 'Space Mono';
+  font-style: normal;
+}
+.app{
+display: grid;
+place-items: center;
+gap: 1rem;
+}
+.calculator-container{
+  border: 1px solid  var(--white);
+  border-radius: 1rem;
+  background-color: var(--white);
+  margin: 3rem 0;
+  padding: 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.bill-input-container{
+  /* background-color: aqua; */
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+    border: 1px solid  pink;
+
+}
+.input-label{
+  
+}
+.bill-input-icon{
+  /* background-color: red; */
+  width: 100%;
+  padding: 0.5rem 0 0.5rem 0;
+  position: relative;
+}
+.bill-logo{
+  height: 1.2rem;
+  width: 1rem;
+  position: absolute;
+  left: 1rem;
+  top: calc(2.5rem / 2);
+}
+.input{
+  width: 100%;
+  height: 2.5rem;
+  padding: 0.3rem;
+  background-color: var(--grey200);
+  border: none;
+  border-radius: 0.2rem;
+}
+
