@@ -16,7 +16,7 @@ function App() {
           <div className="bill-input-icon">
               <img src={dollar} alt="Dollar Logo" className='bill-logo' />
             <input
-            className='input'
+            className='amount-input'
               type="text"
               id="bill"
               name="bill"
