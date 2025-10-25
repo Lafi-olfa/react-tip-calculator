@@ -40,13 +40,20 @@ function App() {
               {/*  */}
               <div className="btn-group" role="group" aria-label="Third group">
                 <button type="button" className="btn btn-secondary">50%</button>
-                <button type="button" className="btn btn-secondary custom">Custom</button>
+                <button type="button"  className="btn btn-secondary custom">Custom</button>
+                {/* <input
+                  type="text"
+                  className="btn btn-secondary custom-input"
+                /> */}
               </div>
             </div>
           </div>
           {/* people */}
           <div className="people-input-container">
-            <label htmlFor="name" className='input-label'>Number Of People</label>
+            <div className="labels">
+              <label htmlFor="name" className='input-label'>Number Of People</label>
+              <span className='input-error'>Can&apos;t be zero</span>
+            </div>
             <div className="people-input-icon">
               <img src={person} alt="Person Logo" className='bill-logo' />
               <input
@@ -57,6 +64,27 @@ function App() {
                 required />
             </div>
           </div>
+        </div>
+        {/* input result */}
+        <div className="input-result">
+          <div className="tip-amount-container">
+            <div className="tip-text">
+              Tip Amount <br /> <span>/ person</span>
+            </div>
+            <div className="tip-amount">
+              $4.27
+            </div>
+          </div>
+          <div className="total-tip">
+            <div className="total-text">
+              Total <br /> <span>/ person</span>
+            </div>
+            <div className="total-amount">
+              $32.27
+            </div>
+          </div>
+          <button type="button" className="btn btn-secondary reset">RESET</button>
+
         </div>
 
       </div>
