@@ -8,16 +8,16 @@ function App() {
   const [billInputValue, setBillInputValue] = useState('');
   const [personInput, setPersonInput] = useState('');
   const [isCustomActive, setIsCustomActive] = useState(false)
-  const [customValue, setCustomValue] = useState(''); 
+  const [customValue, setCustomValue] = useState('');
   const [selectedTip, setSelectedTip] = useState('');
 
   const handleCustomClick = () => {
     setIsCustomActive(true);
-    setSelectedTip(''); 
+    setSelectedTip('');
   }
 
   const handleCustomBlur = () => {
-    if(customValue === ""){
+    if (customValue === "") {
       setIsCustomActive(false)
     }
   }
@@ -44,29 +44,29 @@ function App() {
     setIsCustomActive(false);
   };
 
-   const calculateTip = () => {
+  const calculateTip = () => {
     const bill = Math.max(parseFloat(billInputValue) || 0, 0);
     const people = Math.max(parseFloat(personInput) || 1, 1);
-    
+
     let tipPercentage = 0;
     if (selectedTip !== '') {
       tipPercentage = Math.min(Math.max(parseFloat(selectedTip) / 100, 0), 1);
     } else if (customValue !== '') {
       tipPercentage = Math.min(Math.max(parseFloat(customValue) / 100, 0), 1);
     }
-    
+
     const totalTip = bill * tipPercentage;
     const tipPerPerson = Math.floor((totalTip / people) * 100) / 100;
     const totalPerPerson = (bill + totalTip) / people;
-    
+
     return {
       tipPerPerson: isNaN(tipPerPerson) ? '0.00' : tipPerPerson.toFixed(2),
       totalPerPerson: isNaN(totalPerPerson) ? '0.00' : totalPerPerson.toFixed(2)
     };
   };
-  
+
   const { tipPerPerson, totalPerPerson } = calculateTip();
-  
+
 
   return (
     <div className="app">
@@ -91,54 +91,54 @@ function App() {
                 required />
             </div>
           </div>
-          
+
           {/* tip */}
           <div className="bill-tip-container">
             <label htmlFor="name" className='input-label'>Select Tip % </label>
             <div className="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
               <div className="btn-group mr-2" role="group" aria-label="First group">
-                <button 
-                  type="button" 
+                <button
+                  type="button"
                   className={`btn btn-secondary ${selectedTip === 5 ? 'active' : ''}`}
                   onClick={() => handleTipClick(5)}
                 >
                   5%
                 </button>
-                <button 
-                  type="button" 
+                <button
+                  type="button"
                   className={`btn btn-secondary ${selectedTip === 10 ? 'active' : ''}`}
                   onClick={() => handleTipClick(10)}
                 >
                   10%
                 </button>
               </div>
-              
+
               <div className="btn-group mr-2" role="group" aria-label="Second group">
-                <button 
-                  type="button" 
+                <button
+                  type="button"
                   className={`btn btn-secondary ${selectedTip === 15 ? 'active' : ''}`}
                   onClick={() => handleTipClick(15)}
                 >
                   15%
                 </button>
-                <button 
-                  type="button" 
+                <button
+                  type="button"
                   className={`btn btn-secondary ${selectedTip === 25 ? 'active' : ''}`}
                   onClick={() => handleTipClick(25)}
                 >
                   25%
                 </button>
               </div>
-              
+
               <div className="btn-group" role="group" aria-label="Third group">
-                <button 
-                  type="button" 
+                <button
+                  type="button"
                   className={`btn btn-secondary ${selectedTip === 50 ? 'active' : ''}`}
                   onClick={() => handleTipClick(50)}
                 >
                   50%
                 </button>
-                
+
                 {isCustomActive ? (
                   <input
                     type="number"
@@ -152,18 +152,18 @@ function App() {
                     max="100"
                   />
                 ) : (
-                  <button 
+                  <button
                     type="button"
                     className={`btn btn-secondary custom ${customValue !== '' ? 'active' : ''}`}
                     onClick={handleCustomClick}
                   >
                     Custom
-                  </button> 
+                  </button>
                 )}
               </div>
             </div>
           </div>
-          
+
           {/* people */}
           <div className="people-input-container">
             <div className="labels">
@@ -187,7 +187,7 @@ function App() {
             </div>
           </div>
         </div>
-        
+
         {/* input result */}
         <div className="input-result">
           <div className="tip-amount-container">
@@ -206,8 +206,8 @@ function App() {
               ${personInput === '0' ? '0.00' : totalPerPerson}
             </div>
           </div>
-          <button 
-            type="button" 
+          <button
+            type="button"
             className="btn btn-secondary reset"
             onClick={handleReset}
           >
