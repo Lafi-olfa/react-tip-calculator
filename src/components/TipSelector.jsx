@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
-import { TipContext } from "../context/tipContext";
+import { TipBillContext } from "../context/TipBillContext";
 
 export default function TipSelector() {
     const { selectedTip, handleTipClick, isCustomActive,
         customValue, handleCustomChange, handleCustomBlur,
-        handleCustomClick } = useContext(TipContext)
+        handleCustomClick } = useContext(TipBillContext)
 
     return (
         <>

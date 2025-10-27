@@ -1,10 +1,10 @@
 import React from "react";
 import dollar from '../assets/images/icon-dollar.svg';
 import { useContext } from "react";
-import { TipContext } from "../context/tipContext";
+import { TipBillContext } from "../context/TipBillContext";
 
 export default function BillInput() {
-    const { billInputValue, setBillInputValue } = useContext(TipContext)
+    const { billInputValue, setBillInputValue } = useContext(TipBillContext)
     return (
         <div className="bill-input-container">
             <label htmlFor="name" className='input-label'>Bill</label>

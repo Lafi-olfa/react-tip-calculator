@@ -1,7 +1,7 @@
 import { createContext } from 'react';
 import React, { useState } from "react";
 
-export const TipContext = createContext();
+export const TipBillContext = createContext();
 
 // eslint-disable-next-line react/prop-types
 export const TipProvider = ({ children }) => {
@@ -75,7 +75,7 @@ export const TipProvider = ({ children }) => {
     const { tipPerPerson, totalPerPerson } = calculateTip();
 
     return (
-        <TipContext.Provider
+        <TipBillContext.Provider
             value={{
                 billInputValue, setBillInputValue,
                 personInput, setPersonInput,
@@ -93,6 +93,6 @@ export const TipProvider = ({ children }) => {
         >
             {children}
 
-        </TipContext.Provider>
+        </TipBillContext.Provider>
     )
 }

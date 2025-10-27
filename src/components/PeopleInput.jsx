@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
 import person from '../assets/images/icon-person.svg';
-import { TipContext } from "../context/tipContext";
+import { TipBillContext } from "../context/TipBillContext";
 
 export default function PeopleInput() {
-    const { personInput, setPersonInput } = useContext(TipContext)
+    const { personInput, setPersonInput } = useContext(TipBillContext)
     return (
         <>
             <div className="people-input-container">

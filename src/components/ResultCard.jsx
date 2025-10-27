@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
 import ResetButton from "./ResetButton";
-import { TipContext } from "../context/tipContext";
+import { TipBillContext } from "../context/TipBillContext";
 
 export default function ResultCard() {
-  const { personInput, tipPerPerson, totalPerPerson } = useContext(TipContext)
+  const { personInput, tipPerPerson, totalPerPerson } = useContext(TipBillContext)
   return (
     <>
       <div className="input-result">

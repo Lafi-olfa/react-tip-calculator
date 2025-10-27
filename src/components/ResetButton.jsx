@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
-import { TipContext } from "../context/tipContext";
+import { TipBillContext } from "../context/TipBillContext";
 
 export default function ResetButton() {
-  const { handleReset } = useContext(TipContext);
+  const { handleReset } = useContext(TipBillContext);
   return (
     <button
       type="button"
